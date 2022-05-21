@@ -42,6 +42,13 @@ public class ChangingUserDataParameterizedTest {
     @Before
     public void setup() {
         userRequest = new UserRequest();
+        User user = User.getRandom();
+        Response responseCreate = userRequest.createUserResponse(user);
+        accessToken = responseCreate.body().as(CreateUserResponse.class).getAccessToken();
+        responseCreate.then().statusCode(SC_OK);
+
+        Response responseAuthorization = userRequest.authorizationUserResponse(user);
+        responseAuthorization.then().statusCode(SC_OK);
     }
 
     @After
@@ -55,13 +62,6 @@ public class ChangingUserDataParameterizedTest {
     @DisplayName("Changing user data with authorization")
     @Description("Изменение данных пользователя с авторизацией")
     public void changingUserDataAuthorizationTest() {
-        User user = User.getRandom();
-        Response responseCreate = userRequest.createUserResponse(user);
-        accessToken = responseCreate.body().as(CreateUserResponse.class).getAccessToken();
-        responseCreate.then().statusCode(SC_OK);
-
-        Response responseAuthorization = userRequest.authorizationUserResponse(user);
-        responseAuthorization.then().statusCode(SC_OK);
 
         Map<String, String> inputDataMap = new HashMap<>();
         if (email != null){

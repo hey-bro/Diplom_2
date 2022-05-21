@@ -34,7 +34,7 @@ public class OrderRequest extends BaseAPITest {
                 .get("orders");
     }
 
-    @Step("Получение заказов не авторизованого пользователя")
+    @Step("Получение заказов неавторизованого пользователя")
     public Response receivingUserOrdersResponse () {
         return given()
                 .spec(getBaseSpec())

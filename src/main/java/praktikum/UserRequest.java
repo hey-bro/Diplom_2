@@ -29,7 +29,7 @@ public class UserRequest extends BaseAPITest {
                 .post("auth/login");
     }
 
-    @Step("Авторизация пользователя")
+    @Step("Авторизация пользователя - передача данных пользователя")
     public Response authorizationUserResponse(Map<String, String> inputData) {
         return given()
                 .spec(getBaseSpec())
@@ -67,7 +67,7 @@ public class UserRequest extends BaseAPITest {
                 .patch("auth/user");
     }
 
-    @Step("Изменение данных пользователя")
+    @Step("Изменение данных пользователя - передача данных пользователя")
     public Response changingUserDataResponse(Map<String, String> inputData) {
         return given()
                 .spec(getBaseSpec())

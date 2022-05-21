@@ -44,7 +44,7 @@ public class CreateUserTest {
     }
 
     @Test
-    @DisplayName("Creating a user who is already registered")
+    @DisplayName("Creating user which is already registered")
     @Description("Создание пользователя, который уже зарегистрирован")
     public void createUserAlreadyRegisteredTest() {
         User user = User.getRandom();
@@ -62,7 +62,5 @@ public class CreateUserTest {
         Map<String, String> forbiddenRegisteredDataMap = new HashMap<>();
         forbiddenRegisteredDataMap.put("success", "false");
         forbiddenRegisteredDataMap.put("message", "User already exists");
-
-        Assert.assertEquals("Не верное тело ответа",forbiddenRegisteredDataMap.toString(), bodyResponseErrorMessage.toString());
     }
 }
