@@ -1,0 +1,14 @@
+praktikum/User.class
+praktikum/response/CreateUserResponse.class
+praktikum/response/OrderResponse.class
+praktikum/response/Owner.class
+praktikum/response/UserOrdersResponse.class
+praktikum/BaseAPITest.class
+praktikum/UserRequest.class
+praktikum/OrderRequest.class
+praktikum/response/ResponseErrorMessage.class
+praktikum/response/UserResponse.class
+praktikum/response/IngredientsList.class
+praktikum/Order.class
+praktikum/response/CreateOrderResponse.class
+praktikum/response/OrderList.class
